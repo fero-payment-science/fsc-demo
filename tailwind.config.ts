@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'fero-primary': 'var(--fero-primary)',
+        'fero-secondary': 'var(--fero-secondary)',
       },
     },
   },
