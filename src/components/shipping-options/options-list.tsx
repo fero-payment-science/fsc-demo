@@ -3,13 +3,14 @@ import { useCheckout } from "../../contexts/checkout-context";
 import { cn } from "../../lib/utils";
 import spinner from "../../../public/loaders/spinner-grey.svg";
 const ListItem = ({ rate }: { rate: ShippingRate }) => {
-  const { selectedShipping, setSelectedShipping } = useCheckout();
+  const { selectedShipping, setSelectedShipping, setActiveStep } = useCheckout();
   // const selected:boolean = false;
   const selected: boolean = selectedShipping?.rate_id === rate.rate_id;
   return (
     <div
       data-testid="list-item"
       onClick={() => {
+        setActiveStep("shippingMethod");
         setSelectedShipping(rate);
       }}
       className={cn(

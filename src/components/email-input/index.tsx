@@ -7,7 +7,7 @@ import InputField from "../util-comps/input-field";
 import { useCheckout } from "@/contexts/checkout-context";
 
 export default function EmailInput() {
-  const { email, setEmail, setStepCompleted } =
+  const { email, setEmail, setStepCompleted, setActiveStep } =
     useCheckout();
   const [localEmail, setLocalEmail] = useState(email);
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function EmailInput() {
   }, [localEmail]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setActiveStep("email");
     const newEmail = event.target.value;
     setLocalEmail(newEmail);
   };

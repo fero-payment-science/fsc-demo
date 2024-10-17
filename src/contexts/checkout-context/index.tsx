@@ -1,6 +1,7 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
-import { CheckoutContextData, defaultData } from "./types";
+import { CheckoutContextData, defaultCartItems, defaultData } from "./types";
+import { UiStep } from "@/lib/data/step-configs";
 
 const isAddressFilled = (address: Address, stateRequired: boolean) => {
   const excludedKeys = stateRequired
@@ -23,6 +24,9 @@ export default function CheckoutProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const [activeStep, setActiveStep] = useState<UiStep>("loadCheckout");
+  const [basketItems, setBasketItems] =
+    useState<CartItemData[]>(defaultCartItems); 
   const [email, setEmail] = useState<string>(defaultData.email);
   const [useShippingAddress, setUseShippingAddress] = useState<boolean>(true);
   const [stateRequired, setStateRequired] = useState<boolean>(true);
@@ -74,6 +78,10 @@ export default function CheckoutProvider({
         selectedShipping,
         setSelectedShipping,
         setStateRequired,
+        basketItems,
+        setBasketItems,
+        activeStep,
+        setActiveStep,
       }}
     >
       {children}

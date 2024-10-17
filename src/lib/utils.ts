@@ -20,3 +20,11 @@ export function cleanString(str: string) {
 export function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+export function formatAmount(value: number, currency: string) {
+  let price = (value / 100).toFixed(2);
+
+  price = price.replace(".", ",");
+
+  return `${currency}${price}`;
+}
