@@ -6,3 +6,8 @@ interface CountryObject {
   alpha2: string;
   name: string;
 }
+
+declare interface LatLong {
+  lat: number;
+  lng: number;
+}

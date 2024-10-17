@@ -34,6 +34,12 @@ body {
   padding: 0;
 }
 
+.center-horiz{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .browser-frame{
   background-image: url('/images/browser_frame_b.png');
   background-size: 100% 100%;

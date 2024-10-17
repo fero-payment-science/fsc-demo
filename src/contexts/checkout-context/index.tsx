@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 import { createContext, useContext, useEffect, useState } from "react";
-import { CheckoutContextData, defaultCartItems, defaultData } from "./types";
+import { CheckoutContextData, defaultData } from "./types";
 import { UiStep } from "@/lib/data/step-configs";
+import API from "@/api";
+import { useSessionStorage } from "usehooks-ts";
 
 const isAddressFilled = (address: Address, stateRequired: boolean) => {
   const excludedKeys = stateRequired
@@ -25,12 +28,15 @@ export default function CheckoutProvider({
   children: React.ReactNode;
 }) {
   const [activeStep, setActiveStep] = useState<UiStep>("loadCheckout");
-  const [basketItems, setBasketItems] =
-    useState<CartItemData[]>(defaultCartItems); 
-  const [email, setEmail] = useState<string>(defaultData.email);
+  const [basketItems, setBasketItems] = useSessionStorage<CartItemData[]>(
+    "fsc_basket_items",
+    []
+  ); 
+  const [email, setEmail] = useSessionStorage<string>('fsc_email',defaultData.email);
   const [useShippingAddress, setUseShippingAddress] = useState<boolean>(true);
   const [stateRequired, setStateRequired] = useState<boolean>(true);
-  const [stepCompleted, setStepCompleted] = useState(
+  const [ipAddress, setIpAddress] = useState<string>("");
+  const [stepCompleted, setStepCompleted] = useSessionStorage('fsc_stepCompleted',
     defaultData.stepCompleted
   );
 
@@ -38,29 +44,42 @@ export default function CheckoutProvider({
     null
   );
 
-  const [shippingAddress, setShippingAddress] = useState<Address>(
+  const [shippingAddress, setShippingAddress] = useSessionStorage<Address>(
+    "fsc_shippingAddress",
     defaultData.shippingAddress
   );
 
-  const [billingAddress, setBillingAddress] = useState<Address>(
+  const [billingAddress, setBillingAddress] = useSessionStorage<Address>('fsc_billingAddress',
     defaultData.billingAddress
   );
 
   const handleStepCompleted = (step: string, val?: boolean) =>
     setStepCompleted((prev) => ({ ...prev, [step]: val ?? true }));
 
+  const getUserIp = async () => {
+    const { ip_address: ipAddress } = await API.getUserIP();
+    setIpAddress(ipAddress);
+  };
+
+  const resetCheckout = () => {
+    setActiveStep("loadCheckout");
+    setEmail(defaultData.email);
+    setBasketItems([]);
+    setStepCompleted(defaultData.stepCompleted)
+  };
+
   useEffect(() => {
     const boolValue = isAddressFilled(shippingAddress, stateRequired)
     handleStepCompleted("address", boolValue);
-    // setTimeout(
-    //   () => !boolValue && handleStepCompleted("shipping", false),
-    //   100
-    // );
   }, [shippingAddress, stateRequired]);
 
   useEffect(() => {
     handleStepCompleted("shipping", selectedShipping !== null);
   }, [selectedShipping, stateRequired]);
+
+  useEffect(() => {
+    getUserIp();
+  }, []);
 
   return (
     <CheckoutContext.Provider
@@ -73,6 +92,7 @@ export default function CheckoutProvider({
         setEmail,
         stepCompleted,
         setStepCompleted: handleStepCompleted,
+        resetCheckout,
         useShippingAddress,
         setUseShippingAddress,
         selectedShipping,
@@ -82,6 +102,7 @@ export default function CheckoutProvider({
         setBasketItems,
         activeStep,
         setActiveStep,
+        ipAddress,
       }}
     >
       {children}

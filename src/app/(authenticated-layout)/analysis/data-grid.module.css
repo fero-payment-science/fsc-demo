@@ -1,0 +1,58 @@
+.grid{
+    overflow: auto;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 50px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 320px 600px auto;
+    grid-template-areas: 
+    "sidebar gague gague2"
+    "sidebar address address"
+    "sidebar ip ages";
+}
+
+.module{
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .moduleHeader{
+        display: flex;
+        align-items: center;
+    }
+
+    p.heading{
+        color:  var(--primary);
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.ip{
+    grid-area: ip;
+}
+
+.ages{
+    grid-area: ages;
+}
+
+.gague{
+    grid-area: gague;
+}
+.gague2{
+    grid-area: gague2;
+}
+
+.address{
+    grid-area: address;
+}

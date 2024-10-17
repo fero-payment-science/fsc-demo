@@ -1,0 +1,42 @@
+  #gagueContainer {
+      height: 200px;
+      width: 200px;
+      position: relative;
+      margin: 0 auto;
+  }
+
+  .outer {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15);
+      background-color: rgb(243, 248, 248);
+      position: relative;
+  }
+
+  .inner {
+      height: calc(100% - 80px);
+      width: calc(100% - 80px);
+      border-radius: 50%;
+      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15);
+      background-color: white;
+  }
+
+  p#percent {
+      color: #38B45F;
+      font-weight: 500;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+  }
+
+  svg.bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+  }

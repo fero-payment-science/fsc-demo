@@ -10,12 +10,16 @@ export default function SubmitBtn({
   dependantStep: keyof typeof stepCompleted;
 }) {
   const [isStripeSubmitting, setSubmitting] = useState(false);
-  const { stepCompleted } = useCheckout();
+  const { stepCompleted, setActiveStep } = useCheckout();
   const isEnabled = stepCompleted[dependantStep];
+  const handleSubmit = () => {
+    setSubmitting(true);
+    setActiveStep("proceedToPayment");
+  }
   return (
     <div>
       <button
-        onClick={() => setSubmitting(true)}
+        onClick={handleSubmit}
         className={cn(
           "cursor-pointer w-full h-[60px] text-white bg-black flex items-center justify-center relative z-20 hover:bg-opacity-90 transition-opacity duration-300 ease-out",
           isEnabled

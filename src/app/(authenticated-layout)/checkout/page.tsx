@@ -1,12 +1,12 @@
+import BrowserModule from "@/components/browser-module";
 import CartSummary from "@/components/cart-summary";
-import BrowserModule from "./_components/browser-module";
-import StepTextContainer from "./_components/step-text-container";
 import CheckoutMain from "@/components/checkout-main";
+import StepTextContainer from "@/components/step-text-container";
 
 export default function StorePage(){
     return (
       <div className="w-full h-full grow flex items-center justify-evenly">
-        <BrowserModule>
+        <BrowserModule flex>
           <CheckoutMain />
           <CartSummary />
         </BrowserModule>

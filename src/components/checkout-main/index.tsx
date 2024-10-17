@@ -7,11 +7,19 @@ import AddressModule from "../util-comps/address-module";
 import { useCheckout } from "@/contexts/checkout-context";
 import BillingAddress from "../billing-address";
 import SubmitBtn from "../submit-btn";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const PaymentElement = dynamic(() => import("../payment-element"), {ssr: false});
 
 export default function CheckoutMain() {
-  const { setShippingAddress } = useCheckout();
+  const { setShippingAddress, basketItems } = useCheckout();
+  const router = useRouter();
+  useEffect(() => {
+    if(basketItems.length === 0) {
+      router.push("/");
+    }
+  },[basketItems, router])
 
   return (
     <div className="grow h-full py-2 px-6 flex flex-col gap-4 pb-8">

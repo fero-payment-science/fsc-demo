@@ -19,11 +19,13 @@ export interface CheckoutContextData {
   setBillingAddress: Dispatch<SetStateAction<Address>>;
   setEmail: Dispatch<SetStateAction<string>>;
   setStepCompleted: (step: string, val?: boolean) => void;
+  resetCheckout: () => void;
   setStateRequired: Dispatch<SetStateAction<boolean>>;
   basketItems: CartItemData[];
   setBasketItems: Dispatch<SetStateAction<CartItemData[]>>;
   activeStep: UiStep;
   setActiveStep: Dispatch<SetStateAction<UiStep>>;
+  ipAddress: string;
 }
 
 export const defaultAddress: Address = {
@@ -60,8 +62,10 @@ export const defaultData: CheckoutContextData = {
   setStateRequired: () => {},
   basketItems: [],
   setBasketItems: () => {},
+  resetCheckout: () => {},
   activeStep: "loadCheckout",
   setActiveStep: () => {},
+  ipAddress: "",
 };
 
 export const defaultCartItems: CartItemData[] = [
