@@ -15,6 +15,7 @@ import DashModule from '../_components/dash-module';
 import { defaultLatLng, defaultMapFocus } from '../helpers';
 import type { BtnValues, MapFocus } from '../types';
 import { useCheckout } from '@/contexts/checkout-context';
+import LocationButtons from '../_components/location-buttons/location-buttons';
 
 export default function UserLocation() {
   const {
@@ -71,15 +72,15 @@ export default function UserLocation() {
       <DashModule
         title="User Location Data"
         Icon={RiMapPinUserLine}
-        className={'address'}
+        className={"address"}
       >
         <div className="h-full flex flex-col gap-y-2">
           <div className="flex mb-2 w-full justify-center">
             <strong className="mr-2">Address:</strong>
             <p>
               {Object.values(addressDetails)
-                .filter((i) => i !== '')
-                .join(', ')}
+                .filter((i) => i !== "")
+                .join(", ")}
             </p>
           </div>
           <div className="border-2 rounded-md border-slate-200 my-4 grow shadow-md">
@@ -91,11 +92,11 @@ export default function UserLocation() {
               onDragEnd={onDragEnd}
             />
           </div>
-          {/* <LocationButtons
+          <LocationButtons
             buttons={buttons}
             currentCenter={currentCenter}
             setMapFocus={setMapFocus}
-          /> */}
+          />
         </div>
       </DashModule>
     )

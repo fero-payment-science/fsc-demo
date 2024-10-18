@@ -15,7 +15,7 @@ export default function StoreItem({item}:{item: Product}){
 
     return (
       <div className="cursor-pointer w-full flex flex-col border shadow-md p-2 rounded-lg group">
-        <div className="w-full h-[200px] relative rounded-lg overflow-hidden">
+        <div className="w-full h-[170px] relative rounded-lg overflow-hidden">
           <Image
             src={item.image}
             alt={item.name}

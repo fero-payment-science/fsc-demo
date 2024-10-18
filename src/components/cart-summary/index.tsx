@@ -11,8 +11,8 @@ export default function CartSummary() {
 
   return (
     <>
-    <div className="w-[420px]" />
-    <div className="pointer-events-none absolute right-[1px] h-[calc(100%-85px)] w-[350px] bg-[#f1f1f1] rounded-br-md border-l border-l-[#cacaca] py-[30px] px-[40px]">
+    <div className="max-w-[300px] min-w-[300px]" />
+    <div className="pointer-events-none absolute right-[1px] h-[calc(100%-80px)] w-[300px] bg-[#f1f1f1] rounded-br-md border-l border-l-[#cacaca] py-[30px] px-[40px]">
       {basketItems.map((item: CartItemData) => (
         <CartItem key={item.id} item={item} />
       ))}

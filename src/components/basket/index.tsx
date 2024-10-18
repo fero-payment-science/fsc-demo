@@ -18,7 +18,7 @@ export default function Basket() {
   return (
     <div className={"flex items-center justify-between font-roboto w-[80px] ml-2"}>
       <div className="relative">
-        <HiOutlineShoppingBag color={"var(--background)"} size={20} />
+        <HiOutlineShoppingBag color={"var(--foreground)"} size={20} />
         <div className="absolute h-[15px] w-[15px] bg-white rounded-full bottom-[-5px] right-[-6px] text-xs font-bold text-primary flex justify-center items-center border border-gray-300">
           {basketItems.length}
         </div>

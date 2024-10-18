@@ -2,8 +2,8 @@ import { useMap } from '@vis.gl/react-google-maps';
 import { AiFillInfoCircle } from 'react-icons/ai';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 
-import { Button } from '@/components/ui/button';
-import { TooltipWrapper } from '@/components/ui/tooltip/tooltip';
+import { Button } from '@/components/util-comps/button';
+import { TooltipWrapper } from '@/components/util-comps/tooltip/tooltip';
 import { useUpstreamData } from '@/contexts/upstream-data-context';
 
 import { isMapFocussed } from '../../helpers';

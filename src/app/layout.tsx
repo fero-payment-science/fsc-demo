@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import localFont from "next/font/local";
 import "./globals.css";
 import SessionProvider from '@/lib/session-provider';
+import {merriweather} from '@/app/fonts/fonts_config';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,6 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "FSC Demo",
   description: "Fero Smart Checkout",
+  icons: '/fero-logo-letter.svg',
 };
 
 export default async function RootLayout({
@@ -29,7 +31,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`theme-root${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`theme-root${geistSans.variable} ${geistMono.variable} ${merriweather} antialiased`}
       >
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>

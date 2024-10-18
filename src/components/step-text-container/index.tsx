@@ -45,13 +45,13 @@ export default function StepTextContainer({
   return (
     <div
       className={cn(
-        "w-[350px] min-h-[650px] border flex p-4 py-6 pb-2 gap-2 rounded-lg relative",
+        "w-[400px] min-h-[660px] border flex p-4 py-6 pb-2 gap-4 rounded-lg relative",
         productSelection ? "flex-col justify-between" : ""
       )}
     >
       {!productSelection && (
-        <div className="min-h-[40px] max-h-[40px] min-w-[40px] max-w-[40px] relative top-[-5px]">
-          <VscInfo size={40} />
+        <div className="min-h-[30px] max-h-[30px] min-w-[30px] max-w-[30px] relative top-[5px]">
+          <VscInfo size={30} />
         </div>
       )}
       <div>

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { MdMenuOpen } from 'react-icons/md';
 
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { TooltipWrapper } from '@/components/ui/tooltip/tooltip';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/util-comps/dialog';
+import { TooltipWrapper } from '@/components/util-comps/tooltip/tooltip';
 import { useUpstreamData } from '@/contexts/upstream-data-context';
 
 import { getlastSeen } from '../../_modules/helpers';

@@ -9,20 +9,18 @@ export default function SigninPage() {
   };
 
   return (
-    <div className="h-[600px] w-[400px] flex flex-col justify-center items-center">
-      <div className="flex items-center mb-1">
+    <div className="h-[600px] w-[400px] flex flex-col justify-center items-center relative bottom-[10vh]">
+      <div className="flex items-center mb-1 relative top-[20px] z-1">
         <Image
           className=" relative "
-          src={'/images/fero-logo-full.svg'}
+          src={'/fero-logo-letter.svg'}
           height={70}
           width={250}
           alt={'fero-logo-text'}
         />
       </div>
-      <div className="h-[100px] w-[380px] mt-2 rounded-md flex flex-col justify-center items-center">
-        <p className="text-fero-primary font-semibold mb-4 text-[12px]">
-          Sign in with your Fero email account:
-        </p>
+      <h1 className='font-extrabold text-3xl italic font-merriweather relative z-5'>FERO SMART CHECKOUT</h1>
+      <div className="h-[100px] w-[380px] mt-1 rounded-md flex flex-col justify-center items-center">
         <Image
           onClick={() => {
             handleSignIn(process.env.BASE_CALLBACK_URL ?? '');

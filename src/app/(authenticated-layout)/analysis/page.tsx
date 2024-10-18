@@ -9,7 +9,9 @@ import styles from "./data-grid.module.css";
 import GagueModule from "./_modules/Gague";
 import { AttributeAges } from "./_modules/attribute-ages";
 import IpData from "./_modules/ip-data";
-// import AccountData from "./_modules/account-data";
+import AccountData from "./_modules/account-data";
+import spinner from "../../../../public/loaders/spinner-grey.svg";
+import Image from "next/image";
 
 export default function AnalysisPage() {
   const { ipAddress } = useCheckout();
@@ -23,10 +25,19 @@ export default function AnalysisPage() {
   return (
     <div className="w-full h-full grow flex items-center justify-evenly">
       {!isLoaded ? (
-        <h1>öÖö</h1>
+        <div className="flex flex-col items-center gap-2">
+          <Image
+            alt={"loader"}
+            data-testid="loader"
+            src={spinner}
+            height={60}
+            width={60}
+          />
+          <p>Loading analysis data...</p>
+        </div>
       ) : (
         <div className={styles.grid}>
-          {/* <AccountData /> */}
+          <AccountData />
           <GagueModule
             className="gague"
             title={"Fraud Risk Score"}

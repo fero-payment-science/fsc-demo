@@ -11,9 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'fero-primary': 'var(--fero-primary)',
-        'fero-secondary': 'var(--fero-secondary)',
+        "fero-primary": "var(--fero-primary)",
+        "fero-secondary": "var(--fero-secondary)",
+        danger: "var(--danger)",
       },
+      fontFamily:{
+        merriweather: ["var(--font-merriweather)"],
+      }
     },
   },
   plugins: [],

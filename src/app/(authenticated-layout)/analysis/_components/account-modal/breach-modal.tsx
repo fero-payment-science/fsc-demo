@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { IoWarning } from 'react-icons/io5';
 
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { TooltipWrapper } from '@/components/ui/tooltip/tooltip';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/util-comps/dialog';
+import { TooltipWrapper } from '@/components/util-comps/tooltip/tooltip';
 import { useUpstreamData } from '@/contexts/upstream-data-context';
 import type { Breach } from '@/contexts/upstream-data-context/types';
 import { cn } from '@/lib/utils';

@@ -22,7 +22,7 @@ export default function CheckoutMain() {
   },[basketItems, router])
 
   return (
-    <div className="grow h-full py-2 px-6 flex flex-col gap-4 pb-8">
+    <div className="grow h-full py-2 px-4 flex flex-col gap-4 pb-8">
       <EmailInput />
       <AddressModule
         moduleTitle="Delivery"
