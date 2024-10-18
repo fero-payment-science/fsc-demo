@@ -11,3 +11,9 @@ declare interface LatLong {
   lat: number;
   lng: number;
 }
+
+declare interface PaymentMethod {
+  code: string;
+  name: Provider;
+  type: PaymentType;
+}

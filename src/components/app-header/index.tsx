@@ -11,8 +11,7 @@ export default function AppHeader() {
 
   const handleSignOut = () => {
     signOut().then(() => {
-      setBasketItems([]);
-      resetCheckout();
+      // resetCheckout();
       sessionStorage.clear();
     });
   };

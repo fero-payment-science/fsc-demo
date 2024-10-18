@@ -1,7 +1,9 @@
 import Image from "next/image";
 import logo from '../../../public/images/e-commerce-logo.png';
 import Link from "next/link";
-import Basket from "../basket";
+import dynamic from "next/dynamic";
+
+const Basket = dynamic(() => import("../basket"), { ssr: false, loading: () => <div className="w-[90px]"/> });
 export default function StoreHeader(){
     return (
       <div className="w-full flex items-center justify-between px-10 py-4 relative">

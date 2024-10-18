@@ -2,7 +2,9 @@
 import { useCheckout } from "@/contexts/checkout-context";
 import { formatAmount } from "@/lib/utils";
 import Image from "next/image";
-import CircleTick from "../util-comps/circle-tick";
+import dynamic from "next/dynamic";
+
+const AddToCartBtn = dynamic(() => import("./add-to-cart-btn"), { ssr: false, loading: () => <div className="w-full h-[40px]"/> });
 
 export default function StoreItem({item}:{item: Product}){
     const { setBasketItems, basketItems } = useCheckout()
@@ -32,12 +34,7 @@ export default function StoreItem({item}:{item: Product}){
             </p>
           </div>
         </div>
-        <div
-          onClick={handleAddItem}
-          className="flex justify-center items-center h-[40px] bg-black text-white text-center px-4 rounded-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-indigo-700"
-        >
-          {!isInCart ? "Add to cart" : <CircleTick height={30} width={30} />}
-        </div>
+        <AddToCartBtn handleAddItem={handleAddItem} isInCart={isInCart} />
       </div>
     );
 };
