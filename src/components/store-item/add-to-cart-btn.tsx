@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import CircleTick from "../util-comps/circle-tick";
 
-export default function AddToCartBtn({
+function AddToCartBtn({
   handleAddItem,
   isInCart,
 }: {
@@ -16,3 +17,12 @@ export default function AddToCartBtn({
     </div>
   );
 }
+
+export default dynamic(() => Promise.resolve(AddToCartBtn), {
+  ssr: false,
+  loading: () => (
+    <div className="flex justify-center items-center h-[40px] bg-black text-white text-center px-4 rounded-md pointer-events-none">
+      Add to cart
+    </div>
+  ),
+});

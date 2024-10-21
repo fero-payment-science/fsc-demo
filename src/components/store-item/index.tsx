@@ -2,9 +2,7 @@
 import { useCheckout } from "@/contexts/checkout-context";
 import { formatAmount } from "@/lib/utils";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-
-const AddToCartBtn = dynamic(() => import("./add-to-cart-btn"), { ssr: false, loading: () => <div className="w-full h-[40px]"/> });
+import AddToCartBtn from "./add-to-cart-btn";
 
 export default function StoreItem({item}:{item: Product}){
     const { setBasketItems, basketItems } = useCheckout()

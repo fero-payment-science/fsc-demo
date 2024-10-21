@@ -27,14 +27,19 @@ export default function usePaymentElement() {
       const isCardValid =
         cardNumber.length === 16 &&
         expiryDate.length === 5 &&
-        securityCode.length === 3;
+        securityCode.length === 3 && 
+        formData.country !== "";
       setStepCompleted("payment", isCardValid);
     }
-  }, [selectedMethod]);
+  }, [selectedMethod, formData]);
 
   const handleInput = (key: string, value: string) => {
     setFormData({ ...formData, [key]: value });
   };
+
+  const handleCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFormData({ ...formData, country:e.target.value });
+  }
 
   const handleCreditCard = (e: React.ChangeEvent<HTMLInputElement>) => {
     let input = e.target.value.replace(/\D/g, ""); // Remove all non-digit characters
@@ -84,6 +89,7 @@ export default function usePaymentElement() {
     handleCreditCard,
     handleExpiryDate,
     selectedMethod,
-    setSelectedMethod: handleSelect
+    setSelectedMethod: handleSelect,
+    handleCountry,
   };
 }

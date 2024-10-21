@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { VscInfo } from "react-icons/vsc";
+import ProceedBtn from "./proceed-btn";
 
 const TextBlock = ({ block, title }: { block: string[]; title: string }) => {
   const [display, toggleDisplay] = useState(false);
@@ -87,18 +88,7 @@ export default function StepTextContainer({
         )}
       </div>
       {productSelection && (
-        <Link href="/checkout">
-          <div
-            className={cn(
-              "flex items-center justify-center w-full h-[35px] rounded-md bg-black text-white font-[500] transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer",
-              basketItems.length > 0
-                ? "pointer-events-all opacity-100"
-                : "pointer-events-none opacity-35"
-            )}
-          >
-            Proceed to checkout
-          </div>
-        </Link>
+        <ProceedBtn basketItems={basketItems} />
       )}
       {activeStep === "proceedToPayment" && (
         <Link href="/analysis">

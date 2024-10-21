@@ -69,6 +69,7 @@ export default function PaymentElement({
     handleCVC,
     handleExpiryDate,
     handleCreditCard,
+    handleCountry,
   } = usePaymentElement();
 
   const isEnabled = stepCompleted[dependantStep];
@@ -120,7 +121,7 @@ export default function PaymentElement({
             </div>
           </div>
           <div className="col-span-4">
-            <CountrySelector minimalVersion onChange={(e) => console.log(e)} />
+            <CountrySelector minimalVersion onChange={handleCountry} />
           </div>
         </div>
       </MethodModule>

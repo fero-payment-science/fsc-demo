@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { isValidEmail } from "../../lib/utils";
 import ModuleTitle from "../util-comps/module-title";
-import InputField from "../util-comps/input-field";
+// import InputField from "../util-comps/input-field";
 import { useCheckout } from "@/contexts/checkout-context";
-
+import InputField from "../util-comps/input-field";
 export default function EmailInput() {
   const { email, setEmail, setStepCompleted, setActiveStep } =
     useCheckout();

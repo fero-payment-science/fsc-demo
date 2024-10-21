@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 // import CountrySelector from "../util-comps/country-selector";
-import InputField from "../input-field";
-import CountrySelector from "../country-selector";
+// import InputField from "../input-field";
+// import CountrySelector from "../country-selector";
+import dynamic from "next/dynamic";
 export const placeholderValues: Record<string, string> = {
   first_name: "First name",
   last_name: "Last name",
@@ -13,6 +14,9 @@ export const placeholderValues: Record<string, string> = {
   state: "State/County",
   phone: "Phone",
 };
+
+const InputField = dynamic(() => import("../input-field"), { ssr: false });
+const CountrySelector = dynamic(() => import("../country-selector"), { ssr: false });
 
 export default function AddressForm({
   changeCallback,
