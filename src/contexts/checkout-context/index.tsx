@@ -8,8 +8,8 @@ import { useSessionStorage } from "usehooks-ts";
 
 const isAddressFilled = (address: Address, stateRequired: boolean) => {
   const excludedKeys = stateRequired
-    ? ["company", "address_2", "email"]
-    : ["company", "address_2", "email", "state"];
+    ? ["company", "address_2", "email", "phone"]
+    : ["company", "address_2", "email", "phone", "state"];
 
   const returnValue = Object.keys(address)
     .filter((key) => !excludedKeys.includes(key))
@@ -34,7 +34,7 @@ export default function CheckoutProvider({
   ); 
   const [email, setEmail] = useState<string>(defaultData.email);
   const [useShippingAddress, setUseShippingAddress] = useState<boolean>(true);
-  const [stateRequired, setStateRequired] = useState<boolean>(true);
+  const [stateRequired, setStateRequired] = useState<boolean>(false);
   const [ipAddress, setIpAddress] = useState<string>("");
   const [stepCompleted, setStepCompleted] = useState(
     defaultData.stepCompleted
