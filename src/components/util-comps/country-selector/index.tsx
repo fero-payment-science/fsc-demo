@@ -16,7 +16,7 @@ export default function CountrySelector({
       data-testid="country-selector"
       className={`w-full h-[${
         minimalVersion ? "45px" : "60px"
-      }] border rounded-md cursor-pointer px-3 bg-white relative select-container`}
+      }] border rounded-md cursor-pointer px-3 bg-white relative`}
     >
       {!minimalVersion && (
         <p

@@ -78,23 +78,6 @@ input:focus {
 select {
   appearance: none !important;
 }
-.select-container{
-  position: relative;
-}
-.select-container:after {
-  content: '';
-  position: absolute;
-  right: .5em;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
-  background-image: url('/assets/images/chevron.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  pointer-events: none;
-}
 
 /* Prevent background color from autofill */
 input:-webkit-autofill,

@@ -34,7 +34,7 @@ export default function CheckoutProvider({
   ); 
   const [email, setEmail] = useState<string>(defaultData.email);
   const [useShippingAddress, setUseShippingAddress] = useState<boolean>(true);
-  const [stateRequired, setStateRequired] = useState<boolean>(false);
+  const [stateRequired, setStateRequired] = useState<boolean>(true);
   const [ipAddress, setIpAddress] = useState<string>("");
   const [stepCompleted, setStepCompleted] = useState(
     defaultData.stepCompleted
