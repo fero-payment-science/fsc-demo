@@ -10,6 +10,7 @@ export const products: Product[] = [
     image:
       "/images/product-images/hat.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/hat",
+    
   },
   {
     id: 29,
