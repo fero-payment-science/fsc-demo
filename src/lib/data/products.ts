@@ -8,8 +8,8 @@ export const products: Product[] = [
     sku: "woo-fashion-hat",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113811-0be977aa-edfe-4a09-b36d-a62f02de4a29.jpeg",
-    permalink: "https://9fcbd1b34338.ngrok.app/product/hat/",
+      "/images/product-images/hat.jpeg",
+    permalink: "https://9fcbd1b34338.ngrok.app/product/hat",
   },
   {
     id: 29,
@@ -20,7 +20,7 @@ export const products: Product[] = [
     sku: "woo-fashion-shirt-green",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113801-fd8243b7-8465-4f82-86c1-2c54797fe296.jpeg",
+      "/images/product-images/shirt-green.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/shirt-green/",
   },
   {
@@ -32,7 +32,7 @@ export const products: Product[] = [
     sku: "woo-fashion-jacket",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113817-0fd3751e-b81b-4def-be53-040d8fa049f2.jpeg",
+      "/images/product-images/jacket.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/jacket/",
   },
   {
@@ -44,7 +44,7 @@ export const products: Product[] = [
     sku: "woo-fashion-shirt-cream",
     stock_status: "outofstock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113864-14d59cf5-1233-4053-8193-070413ea3434.jpeg",
+      "/images/product-images/shirt-cream.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/shirt-cream/",
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
     sku: "woo-fashion-shoes",
     stock_status: "outofstock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113861-531ebbcd-f9b5-4c18-b5c7-a878d5017ca2.jpeg",
+      "/images/product-images/shoes.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/shoes/",
   },
   {
@@ -68,7 +68,7 @@ export const products: Product[] = [
     sku: "woo-fashion-socks",
     stock_status: "outofstock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113857-839785e4-d25a-45f0-b647-cd8d9be8bc2d.jpeg",
+      "/images/product-images/socks.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/socks/",
   },
   {
@@ -80,7 +80,7 @@ export const products: Product[] = [
     sku: "woo-fashion-shirt",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113854-b669deff-4c3e-4bb0-b00f-96cfbdc4087e.jpeg",
+      "/images/product-images/shirt.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/shirt/",
   },
   {
@@ -92,7 +92,7 @@ export const products: Product[] = [
     sku: "woo-fashion-blouse",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113836-efdbde32-7863-4a24-9d2d-979025b51260.jpeg",
+      "/images/product-images/blouse.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/blouse/",
   },
   {
@@ -104,7 +104,7 @@ export const products: Product[] = [
     sku: "woo-fashion-sweater",
     stock_status: "instock",
     image:
-      "https://9fcbd1b34338.ngrok.app/wp-content/uploads/2024/09/167113823-3f0757ff-c7c2-44d0-a1e9-0b006772b39a.jpeg",
+      "/images/product-images/sweater.jpeg",
     permalink: "https://9fcbd1b34338.ngrok.app/product/sweater/",
   },
 ];

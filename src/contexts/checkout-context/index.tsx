@@ -32,7 +32,10 @@ export default function CheckoutProvider({
     "fsc_basket_items",
     []
   ); 
-  const [email, setEmail] = useState<string>(defaultData.email);
+  const [email, setEmail] = useSessionStorage<string>(
+    "fsc_email",
+    defaultData.email
+  );
   const [useShippingAddress, setUseShippingAddress] = useState<boolean>(true);
   const [stateRequired, setStateRequired] = useState<boolean>(true);
   const [ipAddress, setIpAddress] = useState<string>("");
